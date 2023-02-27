@@ -1,0 +1,151 @@
+*{
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  background-image: linear-gradient(45deg, #2a6973 15%, #0f4667 50%, #2a6973 90%);
+}
+
+.links {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  top: 40px;
+}
+
+.header-text {
+  text-decoration: none;
+  padding: 5px 11px;
+  background-color: #ffffff;
+  color: #2a6973;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+.central-element {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+section{
+  align-items: center;
+  display: flex;
+  min-height: 100%;
+  justify-content: space-around;
+  padding: 64px 24px;
+}
+
+.card-grid{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 24px;
+  grid-row-gap: 24px;
+  width: 100%;
+}
+
+.card{
+  list-style: none;
+  position: relative;
+}
+
+.card:before{
+  content: '';
+  display: block;
+  padding-bottom: 150%;
+  width: 100%;
+}
+
+.card__background{
+  background-size: cover;
+  background-position: center;
+  border-radius: 24px;
+  bottom: 0;
+  filter: brightness(0.75) saturate(1.2) contrast(0.85);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform-origin: center;
+  transform: scale(1) translateZ(0);
+  transition:
+    filter 200ms linear,
+    transform 200ms linear;
+}
+
+.card:hover .card__background{
+  transform: scale(1.05) translateZ(0);
+  filter: brightness(0.5) contrast(1.2) blur(10px);
+}
+
+.card:hover .opinion {
+  opacity: 1;
+}
+
+.card__content{
+  left: 0;
+  padding: 24px;
+  position: absolute;
+  top: 0;
+}
+
+.card__category{
+  color: rgba(255,255,255,0.8);
+  font-size: 16px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.card__heading{
+  color: rgba(255,255,255,0.9);
+  font-size: 1.9rem;
+  text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+  line-height: 1.4;
+}
+
+.opinion {
+  color: rgba(255,255,255,0.7);
+  font-size: 14px;
+  margin-bottom: 8px;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+@media (max-width: 1700px) {
+  .card-grid {
+    grid-template-columns: repeat(4, 1fr)
+  }
+  .links {
+    top: 20px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr)
+  }
+  .links {
+    top: 20px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr)
+  }
+}
+
+@media (max-width: 700px) {
+  .card-grid {
+    grid-template-columns: repeat(1, 1fr)
+  }
+  .links {
+    top: 20px;
+  }
+}
