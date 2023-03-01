@@ -41,8 +41,6 @@ function setX() {
         </svg>
         `;
 
-    //логическое выражение, чтобы игра завершилась
-    if (count<=4) {
       //ИИ добавляет нолик
       let number = Math.floor(Math.random()*9);
 
@@ -57,8 +55,7 @@ function setX() {
         `;
       } else {
         setO();
-      };
-    }
+      }
 
       //смотрю где крестики, где нолики
       let one = element[0].getAttribute('who');
